@@ -1,0 +1,131 @@
+/* Variables & General Setup */
+:root {
+    --jwm-blue: #004a99;
+    --jwm-gold: #f1c40f;
+    --white: #ffffff;
+    --dark: #2c3e50;
+    --light-bg: #f9f9f9;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    font-family: 'Open Sans', sans-serif; 
+    color: var(--dark); 
+    line-height: 1.6; 
+    scroll-behavior: smooth; 
+}
+
+h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+
+/* Navigation */
+nav { 
+    background: var(--jwm-blue); 
+    padding: 1rem 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000;
+}
+.logo { color: white; font-weight: bold; font-size: 1.2rem; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
+nav a:hover { color: var(--jwm-gold); }
+
+/* Hero Section */
+#home { 
+    height: 110vh; 
+    background: linear-gradient(rgba(0, 74, 153, 0.7), rgba(0, 0, 0, 0.6)), url('images/jwm (13).jpg');
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    color: white; 
+    padding: 20px;
+}
+#home h1 { font-size: 3.5rem; margin-bottom: 10px; }
+
+/* Section Spacing */
+section { padding: 80px 10%; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { color: var(--jwm-blue); font-size: 2rem; border-bottom: 3px solid var(--jwm-gold); display: inline-block; padding-bottom: 10px; }
+
+/* Service Cards */
+.services-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+}
+.card { 
+    background: white; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    transition: 0.3s;
+    height: 100%;
+}
+.card:hover { transform: translateY(-5px); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card-content { padding: 20px; }
+.card h3 { color: var(--jwm-blue); font-size: 1.1rem; margin-bottom: 10px; }
+
+/* Gallery */
+.gallery-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 15px; 
+}
+.gallery-item { height: 250px; border-radius: 8px; overflow: hidden; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.gallery-item:hover img { transform: scale(1.1); }
+
+/* Form Styles */
+.prayer-form { 
+    max-width: 600px; 
+    margin: 0 auto; 
+    background: white; 
+    padding: 35px; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.form-group { margin-bottom: 20px; }
+input, textarea { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ddd; 
+    border-radius: 8px; 
+    font-size: 1rem;
+}
+.btn { 
+    background: var(--jwm-gold); 
+    color: #000; 
+    border: none; 
+    padding: 15px; 
+    cursor: pointer; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    width: 100%; 
+    text-transform: uppercase;
+}
+
+/* Find Us & Giving Sections */
+.info-container {
+    text-align: center; 
+    border: 3px dashed var(--jwm-gold); 
+    padding: 40px; 
+    border-radius: 20px; 
+    background: #fffdf0;
+}
+
+footer { background: #111; color: #888; text-align: center; padding: 40px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul { display: none; }
+    #home h1 { font-size: 2.2rem; }
+}
