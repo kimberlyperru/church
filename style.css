@@ -189,6 +189,18 @@ footer { background: #111; color: #888; text-align: center; padding: 40px; }
     color: var(--jwm-gold);
 }
 
+@media (max-width: 1024px) {
+    .social-icons {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    nav ul {
+        display: none;
+    }
+}
+
 @media (max-width: 900px) {
     #home h1 { font-size: 2.2rem; }
 
@@ -198,7 +210,7 @@ footer { background: #111; color: #888; text-align: center; padding: 40px; }
         right: 0;
         background: var(--jwm-blue);
         flex-direction: column;
-        width: 220px;
+        width: 100%;
         padding: 20px;
         display: none;
     }
@@ -212,7 +224,9 @@ footer { background: #111; color: #888; text-align: center; padding: 40px; }
     }
 
     .social-icons {
-        display: none;
+        /* display: none; */
+        margin-top: 20px;
+        text-align: center;
     }
 }
 
