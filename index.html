@@ -30,6 +30,7 @@
 
     <header id="home">
         <h1>Jesus Winner Ministry</h1>
+        <p> A ministry of all nations</p>
         <p>Kajiado Branch | Led by Reverend Titus Ndiritu</p>
     </header>
 
@@ -54,7 +55,7 @@
                 <img src="images/jwm (35).jpg" alt="Sunday Service">
                 <div class="card-content">
                     <h3>Sunday Main Service</h3>
-                    <p><strong>08:00 AM - 1:00 PM</strong><br>Powerful Worship, Anointing, Healing, and Deliverance.</p>
+                    <p><strong>06:00 AM - 1:00 PM</strong><br>Powerful Worship, Anointing, Healing, and Deliverance.</p>
                 </div>
             </div>
 
@@ -72,7 +73,7 @@
                 <img src="images/jwm (38).jpg" alt="Tuesday Huduma">
                 <div class="card-content">
                     <h3>Tuesday Huduma</h3>
-                    <p><strong>9:00 PM - 2:00 AM</strong><br>Deep dive into the Word of God.</p>
+                    <p><strong>07:00 AM - 1:00 AM</strong><br>Deep dive into the Word of God.</p>
                 </div>
             </div>
 
@@ -122,26 +123,30 @@
         </div>
     </section>
 
-    <section id="prayer" style="background-color: var(--jwm-blue); color: white;">
-        <div class="section-title">
-            <h2 style="color: white;">Prayer Request</h2>
-            <p>Submit your request and our prayer warriors will stand with you.</p>
-        </div>
-        <div class="prayer-form">
-            <form>
-                <div class="form-group">
-                    <input type="text" placeholder="Full Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" placeholder="Phone Number (WhatsApp)" required>
-                </div>
-                <div class="form-group">
-                    <textarea rows="4" placeholder="Your Prayer Request..."></textarea>
-                </div>
-                <button type="submit" class="btn">Send Request</button>
-            </form>
-        </div>
-    </section>
+   <section id="prayer" style="background-color: var(--jwm-blue); color: white;">
+    <div class="section-title">
+        <h2 style="color: white;">Prayer Request</h2>
+        <p>Submit your request and our prayer warriors will stand with you.</p>
+    </div>
+
+    <div class="prayer-form">
+        <form id="prayerForm">
+            <div class="form-group">
+                <input type="text" name="fullName" placeholder="Full Name" required>
+            </div>
+
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="Phone Number (WhatsApp)" required>
+            </div>
+
+            <div class="form-group">
+                <textarea name="prayer" rows="4" placeholder="Your Prayer Request..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Request</button>
+        </form>
+    </div>
+</section>
 
     <section id="location">
         <div class="section-title">
@@ -160,7 +165,7 @@
         </div>
         <div class="info-container">
             <p style="font-size: 1.2rem; margin-bottom: 10px;">Giving via M-Pesa</p>
-            <h2 style="color: #28a745; font-size: 2.5rem;">Paybill: XXXXXX</h2>
+            <h2 style="color: #28a745; font-size: 2.5rem;">Paybill: 400200 <br> Account:</h2>
             <p>Account: (Tithe / Offering / Building)</p>
         </div>
     </section>
@@ -171,4 +176,29 @@
     </footer>
 
 </body>
+<script>
+document.getElementById("prayerForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop normal form submit
+
+    const name = document.querySelector('[name="fullName"]').value;
+    const phone = document.querySelector('[name="phone"]').value;
+    const prayer = document.querySelector('[name="prayer"]').value;
+
+    const whatsappNumber = "254720178193";
+
+    const message = `🙏 *Prayer Request* 🙏
+Name: ${name}
+Phone: ${phone}
+
+Prayer:
+${prayer}`;
+
+    const encodedMessage = encodeURIComponent(message);
+
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+});
+</script>
+
 </html>
