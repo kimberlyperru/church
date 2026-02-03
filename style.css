@@ -55,6 +55,23 @@ section { padding: 80px 10%; }
 .section-title { text-align: center; margin-bottom: 50px; }
 .section-title h2 { color: var(--jwm-blue); font-size: 2rem; border-bottom: 3px solid var(--jwm-gold); display: inline-block; padding-bottom: 10px; }
 
+.services-section {
+    background-color: var(--light-bg);
+}
+
+.about-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-highlight {
+    margin-top: 20px;
+    color: var(--jwm-blue);
+    font-weight: bold;
+}
+
+
 /* Service Cards */
 .services-grid { 
     display: grid; 
@@ -83,6 +100,15 @@ section { padding: 80px 10%; }
 .gallery-item { height: 250px; border-radius: 8px; overflow: hidden; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 .gallery-item:hover img { transform: scale(1.1); }
+
+.prayer-section {
+    background-color: var(--jwm-blue);
+    color: white;
+}
+
+.prayer-section-title {
+    color: white;
+}
 
 /* Form Styles */
 .prayer-form { 
@@ -122,10 +148,97 @@ input, textarea {
     background: #fffdf0;
 }
 
+.map-container {
+    margin-top: 40px;
+}
+
+.location-heading {
+    margin: 15px 0;
+}
+
+
 footer { background: #111; color: #888; text-align: center; padding: 40px; }
 
 /* Responsive */
-@media (max-width: 768px) {
-    nav ul { display: none; }
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
+
+.social-icons a {
+    color: white;
+    margin-left: 12px;
+    font-size: 1.2rem;
+}
+
+.social-icons a {
+    color: white;
+    margin-left: 12px;
+    font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+    color: var(--jwm-gold);
+}
+
+@media (max-width: 900px) {
     #home h1 { font-size: 2.2rem; }
+
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: var(--jwm-blue);
+        flex-direction: column;
+        width: 220px;
+        padding: 20px;
+        display: none;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .social-icons {
+        display: none;
+    }
+}
+
+#lightbox {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+#lightbox #close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
 }
