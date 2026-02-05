@@ -17,30 +17,38 @@
             <img src="images/apple-touch-icon.png" alt="JWM Logo" class="nav-logo">
         </a>
     </div>
-    <div class="menu-toggle" id="menuToggle">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+    
     <ul id="navLinks">
-        <li><a href="#home">HOME</a></li>
+        <li><a href="#home" class="active">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#gallery">GALLERY</a></li>
         <li><a href="#prayer">PRAYER</a></li>
         <li><a href="#giving">GIVE</a></li>
         <li><a href="#location">FIND US</a></li>
-        <div class="social-icons">
+         <div class="social-icons">
         <a href="https://www.facebook.com/p/Jesus-Winner-Ministry-Kajiado-Branch-100064616262795/" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/@jesuswinnerministrykajiad7355" target="_blank"><i class="fab fa-youtube"></i></a>
         <a href="https://wa.me/254720178193" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
     </ul>
+
+    <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 </nav>
 
     <header id="home">
         <h1>Jesus Winner Ministry</h1>
         <p> A ministry of all nations</p>
         <p>Kajiado Branch | Led by Reverend Titus Ndiritu</p>
+         <div class="hero-buttons">
+  <a href="#services" class="btn-hero primary">Join Us This Sunday</a>
+  <a href="#prayer" class="btn-hero secondary">Request Prayer</a>
+</div>
     </header>
+   
+
 
     <section id="about">
         <div class="section-title">
@@ -81,7 +89,7 @@
                 <img src="images/jwm (38).jpg" alt="Tuesday Huduma">
                 <div class="card-content">
                     <h3>Tuesday Huduma</h3>
-                    <p><strong>07:00 AM - 1:00 AM</strong><br>Deep dive into the Word of God.</p>
+                    <p><strong>07:00 AM - 1:00 PM</strong><br>Deep dive into the Word of God.</p>
                 </div>
             </div>
 
@@ -116,19 +124,20 @@
             <h2>Ministry Gallery</h2>
         </div>
         <div class="gallery-grid">
-            <div class="gallery-item"><img src="images/jwm (1).jpg" alt="A pastor preaching to the congregation" loading="lazy"></div>
-            <div class="gallery-item"><img src="images/jwm (2).jpg" alt="A woman leading a prayer session" loading="lazy"></div>
-            <div class="gallery-item"><img src="images/jwm (3).jpg" alt="The church congregation worshiping" loading="lazy"></div>
-            <div class="gallery-item"><img src="images/jwm (4).jpg" alt="A child reading from the bible" loading="lazy"></div>
-            <div class="gallery-item"><img src="images/jwm (5).jpg" alt="A group of people praying together" loading="lazy"></div>
-            <div class="gallery-item"><img src="images/jwm (6).jpg" alt="A pastor anointing a member of the congregation" loading="lazy"></div>
-            <div class="gallery-item"><img src="images/jwm (7).jpg" alt="A group of people singing and dancing"></div>
-            <div class="gallery-item"><img src="images/jwm (30).jpg" alt="A group of people raising their hands in worship"></div>
-            <div class="gallery-item"><img src="images/jwm (9).jpg" alt="The church choir singing"></div>
-            <div class="gallery-item"><img src="images/jwm (10).jpg" alt="A pastor praying for a woman"></div>
-            <div class="gallery-item"><img src="images/jwm (36).jpg" alt="A man playing the keyboard"></div>
-            <div class="gallery-item"><img src="images/jwm (12).jpg" alt="A woman singing with a microphone"></div>
+            <div class="gallery-item" data-src="images/jwm (1).jpg"><img src="images/jwm (1).jpg" alt="A pastor preaching to the congregation" loading="lazy"></div>
+            <div class="gallery-item" data-src="images/jwm (2).jpg"><img src="images/jwm (2).jpg" alt="A woman leading a prayer session" loading="lazy"></div>
+            <div class="gallery-item" data-src="images/jwm (3).jpg"><img src="images/jwm (3).jpg" alt="The church congregation worshiping" loading="lazy"></div>
+            <div class="gallery-item" data-src="images/jwm (4).jpg"><img src="images/jwm (4).jpg" alt="A child reading from the bible" loading="lazy"></div>
+            <div class="gallery-item" data-src="images/jwm (5).jpg"><img src="images/jwm (5).jpg" alt="A group of people praying together" loading="lazy"></div>
+            <div class="gallery-item" data-src="images/jwm (6).jpg"><img src="images/jwm (6).jpg" alt="A pastor anointing a member of the congregation" loading="lazy"></div>
+            <div class="gallery-item" data-src="images/jwm (7).jpg"><img src="images/jwm (7).jpg" alt="A group of people singing and dancing"></div>
+            <div class="gallery-item" data-src="images/jwm (30).jpg"><img src="images/jwm (30).jpg" alt="A group of people raising their hands in worship"></div>
+            <div class="gallery-item" data-src="images/jwm (9).jpg"><img src="images/jwm (9).jpg" alt="The church choir singing"></div>
+            <div class="gallery-item" data-src="images/jwm (10).jpg"><img src="images/jwm (10).jpg" alt="A pastor praying for a woman"></div>
+            <div class="gallery-item" data-src="images/jwm (36).jpg"><img src="images/jwm (36).jpg" alt="A man playing the keyboard"></div>
+            <div class="gallery-item" data-src="images/jwm (12).jpg"><img src="images/jwm (12).jpg" alt="A woman singing with a microphone"></div>
         </div>
+        <button id="gallery-load-more">View More</button>
     </section>
     <!-- ================= FACEBOOK LIVE ================= -->
 <section id="live">
@@ -218,54 +227,164 @@
         <p>Designed by <a href="http://bit.ly/4610EWk" target="_blank">PERRU</a></p>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <a id="scroll-to-top" href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+
     <script>
-document.getElementById("menuToggle").addEventListener("click", () => {
-  document.getElementById("navLinks").classList.toggle("show");
-});
-</script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-<script>
-document.getElementById("prayerForm").addEventListener("submit", function(e) {
-    e.preventDefault(); // stop normal form submit
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
 
-    const name = document.querySelector('[name="fullName"]').value;
-    const phone = document.querySelector('[name="phone"]').value;
-    const prayer = document.querySelector('[name="prayer"]').value;
+        menuToggle.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            menuToggle.classList.toggle("open");
+        });
 
-    const whatsappNumber = "254720178193";
+        // Close mobile menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('show')) {
+                    navLinks.classList.remove('show');
+                    menuToggle.classList.remove('open');
+                }
+            });
+        });
 
-    const message = `🙏 *Prayer Request* 🙏
-Name: ${name}
-Phone: ${phone}
+        // Prayer Form Submission
+        document.getElementById("prayerForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const name = document.querySelector('[name="fullName"]').value;
+            const phone = document.querySelector('[name="phone"]').value;
+            const prayer = document.querySelector('[name="prayer"]').value;
+            const whatsappNumber = "254720178193";
+            const message = `🙏 *Prayer Request* 🙏\nName: ${name}\nPhone: ${phone}\n\nPrayer:\n${prayer}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            window.open(whatsappURL, "_blank");
+        });
 
-Prayer:
-${prayer}`;
+        // Gallery Lightbox
+        const galleryItems = document.querySelectorAll(".gallery-item");
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeBtn = document.getElementById("close");
 
-    const encodedMessage = encodeURIComponent(message);
+        galleryItems.forEach(item => {
+            item.addEventListener("click", () => {
+                lightbox.style.display = "flex";
+                lightboxImg.src = item.querySelector('img').src;
+            });
+        });
 
-    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        closeBtn.onclick = () => {
+            lightbox.style.display = "none";
+        };
 
-    window.open(whatsappURL, "_blank");
-});
-</script>
-<script>
-const galleryImages = document.querySelectorAll(".gallery-item img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.getElementById("close");
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = "none";
+            }
+        });
 
-galleryImages.forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-  });
-});
+        // Gallery "View More"
+        const allImages = [
+            { src: "images/jwm (13).jpg", alt: "Image 13" },
+            { src: "images/jwm (14).jpg", alt: "Image 14" },
+            { src: "images/jwm (15).jpg", alt: "Image 15" },
+            { src: "images/jwm (16).jpg", alt: "Image 16" },
+            { src: "images/jwm (17).jpg", alt: "Image 17" },
+            { src: "images/jwm (18).jpg", alt: "Image 18" },
+            { src: "images/jwm (19).jpg", alt: "Image 19" },
+            { src: "images/jwm (20).jpg", alt: "Image 20" },
+            { src: "images/jwm (21).jpg", alt: "Image 21" },
+            { src: "images/jwm (22).jpg", alt: "Image 22" },
+            { src: "images/jwm (23).jpg", alt: "Image 23" },
+            { src: "images/jwm (24).jpg", alt: "Image 24" },
+            { src: "images/jwm (25).jpg", alt: "Image 25" },
+            { src: "images/jwm (26).jpg", alt: "Image 26" },
+            { src: "images/jwm (28).jpg", alt: "Image 28" },
+            { src: "images/jwm (29).jpg", alt: "Image 29" },
+            { src: "images/jwm (33).jpg", alt: "Image 33" },
+            { src: "images/jwm (34).jpg", alt: "Image 34" },
+            { src: "images/jwm (35).jpg", alt: "Image 35" },
+            { src: "images/jwm (37).jpg", alt: "Image 37" },
+            { src: "images/jwm (38).jpg", alt: "Image 38" },
+            { src: "images/jwm (39).jpg", alt: "Image 39" },
+            { src: "images/jwm (40).jpg", alt: "Image 40" },
+            { src: "images/jwm (41).jpg", alt: "Image 41" },
+            { src: "images/jwm (42).jpg", alt: "Image 42" },
+            { src: "images/jwm (43).jpg", alt: "Image 43" },
+            { src: "images/jwm (44).jpg", alt: "Image 44" },
+            { src: "images/jwm (45).jpg", alt: "Image 45" },
+            { src: "images/jwm (46).jpg", alt: "Image 46" },
+            { src: "images/jwm (47).jpg", alt: "Image 47" },
+            { src: "images/jwm (48).jpg", alt: "Image 48" },
+            { src: "images/jwm (49).jpg", alt: "Image 49" }
+        ];
 
-closeBtn.onclick = () => {
-  lightbox.style.display = "none";
-};
-</script>
+        const galleryGrid = document.querySelector('.gallery-grid');
+        const loadMoreBtn = document.getElementById('gallery-load-more');
+        let currentImgCount = 12;
 
+        loadMoreBtn.addEventListener('click', () => {
+            const newImages = allImages.slice(currentImgCount, currentImgCount + 6);
+            newImages.forEach(image => {
+                const newItem = document.createElement('div');
+                newItem.className = 'gallery-item';
+                newItem.innerHTML = `<img src="${image.src}" alt="${image.alt}" loading="lazy">`;
+                newItem.addEventListener("click", () => {
+                    lightbox.style.display = "flex";
+                    lightboxImg.src = image.src;
+                });
+                galleryGrid.appendChild(newItem);
+            });
+            currentImgCount += 6;
+            if (currentImgCount >= allImages.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById("scroll-to-top");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.classList.add("show");
+            } else {
+                scrollToTopBtn.classList.remove("show");
+            }
+        };
+
+        // Active Nav Link on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLi = document.querySelectorAll('nav ul li a');
+
+        window.addEventListener('scroll', ()=> {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if(pageYOffset >= sectionTop - 60){
+                    current = section.getAttribute('id');
+                }
+            })
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                if(a.getAttribute('href') == '#' + current){
+                    a.classList.add('active');
+                }
+            })
+        });
+
+    </script>
 </body>
 
 
