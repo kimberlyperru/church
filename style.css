@@ -722,6 +722,10 @@ footer a:hover {
   .prayer-form {
       padding: 25px;
   }
+
+  .welcome-container {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
@@ -735,5 +739,10 @@ footer a:hover {
 
   .section-title h2 {
       font-size: 1.8rem;
+  }
+
+  .leader-card img {
+    width: 150px;
+    height: 150px;
   }
 }
